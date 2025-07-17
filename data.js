@@ -1,12 +1,12 @@
 const SUBJECTS = [
   { name: "Fundamentos de matemáticas", prerequisites: [], done: false },
-  { name: "Cálculo diferencial", prerequisites: ["Fundamentos de matemáticas"], done: false },
-  { name: "Álgebra", prerequisites: ["Fundamentos de matemáticas"], done: false },
-  { name: "Fundamentos de programación", prerequisites: [], done: false },
-  { name: "Fundamentos de física", prerequisites: [], done: false },
   { name: "Desarrollo personal", prerequisites: [], done: false },
   { name: "Desafíos de ingeniería", prerequisites: [], done: false },
+  { name: "Fundamentos de programación", prerequisites: [], done: false },
+  { name: "Fundamentos de física", prerequisites: [], done: false },
 
+  { name: "Cálculo diferencial", prerequisites: ["Fundamentos de matemáticas"], done: false },
+  { name: "Álgebra", prerequisites: ["Fundamentos de matemáticas"], done: false },
   { name: "Ingeniería, innovación y emprendimiento", prerequisites: ["Desafíos de ingeniería"], done: false },
   { name: "Programación", prerequisites: ["Fundamentos de programación"], done: false },
   { name: "Química para ingeniería", prerequisites: [], done: false },
@@ -24,7 +24,54 @@ const SUBJECTS = [
   { name: "Física calor y ondas", prerequisites: ["Cálculo integral y series", "Física mecánica"], done: false },
   { name: "Administración de empresas y organizaciones", prerequisites: ["Tópicos de formación general para ingeniería industrial", "Alfabetización académica para ingeniería I"], done: false },
   { name: "Tipo sello UV II", prerequisites: ["Tipe sello UV I"], done: false },
-  { name: "Idioma II", prerequisites: ["Idioma I"], done: false }
+  { name: "Idioma II", prerequisites: ["Idioma I"], done: false },
 
-  // Puedes seguir agregando el resto aquí si lo deseas
+  { name: "Física electromagnetismo", prerequisites: ["Cálculo integral y series", "Física mecánica"], done: false },
+  { name: "Estadística y probabilidades", prerequisites: ["Cálculo en varias variables", "Programación"], done: false },
+  { name: "Análisis financieros y contable", prerequisites: ["Álgebra", "Administración de empresas y organizaciones"], done: false },
+  { name: "Termodinámica", prerequisites: ["Física calor y ondas", "Química para ingeniería"], done: false },
+  { name: "Análisis de materiales y diseño de productos", prerequisites: ["Ingeniería, innovación y emprendimiento", "Química para ingeniería"], done: false },
+  { name: "Data science", prerequisites: ["Álgebra lineal", "Programación"], done: false },
+  { name: "Idioma III", prerequisites: ["Idioma II"], done: false },
+  { name: "Práctica básica", prerequisites: ["Cálculo en varias variables", "Ecuaciones diferenciales ordinarias", "Física calor y ondas", "Administración de empresas y organizaciones", "Tipo sello UV II", "Idioma II"], done: false },
+
+  { name: "Inferencia estadística", prerequisites: ["Estadística y probabilidades"], done: false },
+  { name: "Costos y presupuestos", prerequisites: ["Análisis financieros y contable"], done: false },
+  { name: "Pensamiento sistémico", prerequisites: ["Administración de empresas y organizaciones", "Data science"], done: false },
+  { name: "Alfabetización académica para ingeniería II", prerequisites: ["Alfabetización académica para ingeniería I"], done: false },
+  { name: "Microeconomía y macroeconomía", prerequisites: ["Cálculo integral y series", "Administración de empresas y organizaciones"], done: false },
+  { name: "Idioma IV", prerequisites: ["Idioma III"], done: false },
+
+  { name: "Procesos industriales", prerequisites: ["Termodinámica"], done: false },
+  { name: "Gestión de talento en las organizaciones", prerequisites: ["Pensamiento sistémico", "Administración de empresas y organizaciones"], done: false },
+  { name: "Modelamiento", prerequisites: ["Inferencia estadística", "Álgebra lineal"], done: false },
+  { name: "Sistemas de información y administración de datos", prerequisites: ["Pensamiento sistémico", "Data science"], done: false },
+  { name: "Economía circular y sostenibilidad", prerequisites: ["Análisis de materiales y diseño de productos", "Microeconomía y macroeconomía"], done: false },
+  { name: "Gestión de la innovación y emprendimiento", prerequisites: ["Tópicos de formación general para ingeniería industrial", "Análisis de materiales y diseño de productos"], done: false },
+
+  { name: "Gestión de operaciones I", prerequisites: ["Modelamiento"], done: false },
+  { name: "Análisis y estrategia de negocios", prerequisites: ["Costos y presupuestos", "Microeconomía y macroeconomía"], done: false },
+  { name: "Visualización de datos e inteligencia de negocios", prerequisites: ["Sistemas de información y administración de datos"], done: false },
+  { name: "Estrategia de marketing", prerequisites: ["Gestión de la innovación y emprendimiento"], done: false },
+  { name: "Ingeniería económica", prerequisites: ["Costos y presupuestos", "Microeconomía y macroeconomía"], done: false },
+  { name: "Proyecto de licenciatura", prerequisites: ["Procesos industriales", "Gestión de talento en las organizaciones", "Modelamiento", "Sistemas de información y administración de datos", "Economía circular y sostenibilidad", "Gestión de la innovación y emprendimiento"], done: false },
+
+  { name: "Investigación de operaciones", prerequisites: ["Modelamiento"], done: false },
+  { name: "Gestión de operaciones II", prerequisites: ["Gestión de operaciones I"], done: false },
+  { name: "Dirección estratégica", prerequisites: ["Análisis y estrategia de negocios"], done: false },
+  { name: "Formulación y evaluación de proyectos", prerequisites: ["Ingeniería económica", "Economía circular y sostenibilidad"], done: false },
+  { name: "Simulación de procesos y sistemas", prerequisites: ["Procesos industriales", "Modelamiento"], done: false },
+  { name: "Desarrollo organizacional", prerequisites: ["Gestión de talento en las organizaciones", "Análisis y estrategia de negocios"], done: false },
+
+  { name: "Gestión de riesgos", prerequisites: ["Análisis y estrategia de negocios", "Economía circular y sostenibilidad"], done: false },
+  { name: "Gestión de la cadena de suministros", prerequisites: ["Investigación de operaciones", "Gestión de operaciones II"], done: false },
+  { name: "Project management", prerequisites: ["Dirección estratégica", "Formulación y evaluación de proyectos"], done: false },
+  { name: "Gestión energética", prerequisites: ["Economía circular y sostenibilidad"], done: false },
+  { name: "Electivo profesional I", prerequisites: ["Gestión de operaciones I", "Análisis y estrategia de negocios", "Visualización de datos e inteligencia de negocios", "Estrategia de marketing", "Ingeniería económica", "Proyecto de licenciatura"], done: false },
+  { name: "Finanzas", prerequisites: ["Ingeniería económica"], done: false },
+  { name: "Taller de comunicación efectiva", prerequisites: ["Gestión de operaciones I", "Análisis y estrategia de negocios", "Visualización de datos e inteligencia de negocios", "Estrategia de marketing", "Ingeniería económica", "Proyecto de licenciatura"], done: false },
+
+  { name: "Proyecto de título", prerequisites: ["Gestión de riesgos", "Gestión de la cadena de suministros", "Project management", "Gestión energética", "Electivo profesional I", "Finanzas", "Taller de comunicación efectiva"], done: false },
+  { name: "Electivo profesional II", prerequisites: ["Gestión de operaciones I", "Análisis y estrategia de negocios", "Visualización de datos e inteligencia de negocios", "Estrategia de marketing", "Ingeniería económica", "Proyecto de licenciatura"], done: false },
+  { name: "Práctica profesional", prerequisites: ["Gestión de riesgos", "Gestión de la cadena de suministros", "Project management", "Gestión energética", "Electivo profesional I", "Finanzas", "Taller de comunicación efectiva", "Práctica básica"], done: false }
 ];
